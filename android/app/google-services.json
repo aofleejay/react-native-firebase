@@ -1,0 +1,113 @@
+{
+  "project_info": {
+    "project_number": "1000566651397",
+    "firebase_url": "https://react-native-analytics.firebaseio.com",
+    "project_id": "react-native-analytics",
+    "storage_bucket": "react-native-analytics.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1000566651397:android:f0153da2689f04b0",
+        "android_client_info": {
+          "package_name": "com.reactnativefirebaseanalytics"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1000566651397-beevqqkf9ikrtogcf1p70nkqon3s19r8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.reactnativefirebaseanalytics",
+            "certificate_hash": "6d186b2d0236b92f3e6bbbe58ad800d3e0287ae5"
+          }
+        },
+        {
+          "client_id": "1000566651397-8kquflj730d31aj1kd72080vofr1scra.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSxup3ylG4PITRWx24XWILXxMUK1_HekQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1000566651397-8kquflj730d31aj1kd72080vofr1scra.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1000566651397-um17p9889qsrdj0pomhaeb239qvs89a1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.reactNativeFirebaseAnalytics"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1000566651397:android:ea3e8f0497d9e3ee",
+        "android_client_info": {
+          "package_name": "com.reactnativefirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1000566651397-04aee68s2t18sv1hh0oqpp4734umncrb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.reactnativefirebase",
+            "certificate_hash": "57d352fce7ed4033eacd49bb8d178191b1dc8df0"
+          }
+        },
+        {
+          "client_id": "1000566651397-8kquflj730d31aj1kd72080vofr1scra.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSxup3ylG4PITRWx24XWILXxMUK1_HekQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1000566651397-8kquflj730d31aj1kd72080vofr1scra.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1000566651397-um17p9889qsrdj0pomhaeb239qvs89a1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.reactNativeFirebaseAnalytics"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
