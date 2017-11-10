@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Button } from 'react-native'
+import { Button, View } from 'react-native'
 import firebase from 'react-native-firebase'
+import { ADMOB_ID, SIMPLE_BANNER_UNIT_ID } from 'react-native-dotenv'
 
 class HomeScreen extends Component {
   static navigationOptions = {
@@ -8,6 +9,7 @@ class HomeScreen extends Component {
   }
 
   componentDidMount() {
+    firebase.admob().initialize(ADMOB_ID)
     firebase.analytics().setCurrentScreen('Home')
   }
 
@@ -21,12 +23,15 @@ class HomeScreen extends Component {
   }
 
   render() {
-    
+    const Banner = firebase.admob.Banner
     return (
-      <Button
-        title="Go to Jane's profile"
-        onPress={() => this.navigateToProfileScreen()}
-      />
+      <View>
+        <Button
+          title="Go to Jane's profile"
+          onPress={() => this.navigateToProfileScreen()}
+        />
+        <Banner unitId={SIMPLE_BANNER_UNIT_ID}/>
+      </View>
     )
   }
 }
