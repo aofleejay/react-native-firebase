@@ -7,7 +7,7 @@ class ProfileScreen extends Component {
     title: 'Profile',
   }
 
-  componentWillMount() {
+  componentDidMount() {
     firebase.analytics().setCurrentScreen('Profile')    
   }
 

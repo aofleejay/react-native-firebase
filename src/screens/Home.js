@@ -7,8 +7,8 @@ class HomeScreen extends Component {
     title: 'Welcome',
   }
 
-  componentWillMount() {
-    firebase.analytics().setCurrentScreen('Home')    
+  componentDidMount() {
+    firebase.analytics().setCurrentScreen('Home')
   }
 
   navigateToProfileScreen() {
