@@ -8,6 +8,9 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import firebase from 'react-native-firebase'
+
+const firebaseRemoteConfig = firebase.config()
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -18,6 +21,19 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+  componentDidMount() {
+    firebaseRemoteConfig.fetch(0)
+      .then((res) => firebaseRemoteConfig.activateFetched())
+      .then((activated) => {
+        if (!activated) console.log('Fetched data not activated');
+        return firebaseRemoteConfig.getValue('logoEnabled');
+      })
+      .then((data) => {
+        console.log('data : ', data.val())
+      })
+      .catch((error) => console.log('err : ', error) )
+  }
+  
   render() {
     return (
       <View style={styles.container}>
