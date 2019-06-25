@@ -2,7 +2,12 @@ import React, { Component } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import firebase from 'react-native-firebase'
 
-const firebaseRemoteConfig = firebase.config()
+const REMOTE_CONFIG_CACHE_DURATION = 3600
+
+const remoteConfig = firebase.config()
+remoteConfig.setDefaults({
+  greetingMessage: 'Sa wad de krub',
+})
 
 export default class App extends Component {
   state = {
@@ -10,16 +15,20 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    firebaseRemoteConfig
-      .fetch(0)
-      .then(() => firebaseRemoteConfig.activateFetched())
+    if (__DEV__) {
+      remoteConfig.enableDeveloperMode()
+    }
+
+    remoteConfig
+      .fetch(REMOTE_CONFIG_CACHE_DURATION)
+      .then(() => remoteConfig.activateFetched())
       .then(activated => {
         if (!activated) console.log('Fetched data not activated')
-        return firebaseRemoteConfig.getValue('greeting')
+        return remoteConfig.getValue('greeting_message')
       })
-      .then(greeting => {
-        this.setState({ greetingMessage: greeting.val() })
-      })
+      .then(greetingMessage =>
+        this.setState({ greetingMessage: greetingMessage.val() })
+      )
       .catch(error => console.log('err : ', error))
   }
 
@@ -43,10 +52,5 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
 })
